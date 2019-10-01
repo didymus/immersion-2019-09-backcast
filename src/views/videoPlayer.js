@@ -11,6 +11,7 @@ const VideoPlayerView = Backbone.View.extend({
   },
 
   render: function() {
+    
     if (this.model) {
       this.$el.html(this.template(this.model.attributes));
     } else {

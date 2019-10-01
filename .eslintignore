@@ -3,3 +3,4 @@
 **/vendor
 **/*.min.js
 src/data/*
+src/*

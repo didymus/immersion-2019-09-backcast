@@ -1,7 +1,7 @@
 const Videos = Backbone.Collection.extend({
 
   model: Video,
-  url: 'http://www.googleapis.com/youtube/v3/search',
+  url: 'https://www.googleapis.com/youtube/v3/search',
   //Google's youtube API url
 
 
@@ -16,7 +16,7 @@ const Videos = Backbone.Collection.extend({
         type: 'video',
         videoEmbeddable: 'true'
       }
-    })
+    });
   },
 
   parse: function(response) {
