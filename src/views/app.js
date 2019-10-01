@@ -17,10 +17,8 @@ const AppView = Backbone.View.extend({
     return this;
   },
 
-  template: templateURL('src/templates/app.html'),
-
   renderVideoList: function() {
-    new VideoListEntryView({
+    new VideoListView({
       el: this.$('.list'),
       collection: this.videos
     }).render();
@@ -37,7 +35,9 @@ const AppView = Backbone.View.extend({
     new SearchView({
       el: this.$('.search')
     }).render();
-  }
+  },
+  
+  template: templateURL('src/templates/app.html')
 });
 
 window.AppView = AppView;
