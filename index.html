@@ -17,18 +17,20 @@
     </h5>
   </div>
 
+  <script src="src/config/youtube.js"></script>
+  <!-- Load the Youtube script to get access to the API key-->
 
   <script src="src/models/video.js"></script>
   <script src="src/collections/videos.js"></script>
   <script src="src/lib/templateUrl.js"></script>
-  <script src="src/config/youtube.js"></script>
   <script src="src/views/app.js"></script>
   <script src="src/views/search.js"></script>
   <script src="src/views/videoList.js"></script>
   <script src="src/views/videoListEntry.js"></script>
   <script src="src/views/videoPlayer.js"></script>
-  <script src="src/data/exampleVideoData.js"></script>
 
+  <script src="src/data/exampleVideoData.js"></script>
+  <!-- Use example video data to test video functionality-->
   <script>
     backboneReady(() => {
       new AppView();
