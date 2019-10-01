@@ -3,7 +3,7 @@ const VideoListView = Backbone.View.extend({
   //Initialize the video in list view
   initialize: function() {
     //Render the collection when it syncs
-    this.collection.on(this.collection, 'sync', this.render);
+    this.listenTo(this.collection, 'sync', this.render);
   },
 
   //Renders video list view

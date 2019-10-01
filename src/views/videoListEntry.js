@@ -1,7 +1,7 @@
 const VideoListEntryView = Backbone.View.extend({
   //Sets up entry title clickability
   events: {
-    'click .video-list-entry-title': 'handeClick'
+    'click .video-list-entry-title': 'handleClick'
 
   },
   //If clicked, run select
