@@ -2,39 +2,39 @@ const AppView = Backbone.View.extend({
 
   el: '#app',
 
-  //Initializes and renders the app
+  // initializes and renders the app
   initialize: function() {
     this.videos = new Videos();
-    //Tells Backbone to listen for sync on videos and call firstSearch 
+    // tells Backbone to listen for `sync` on videos to call firstSearch
     this.listenTo(this.videos, 'sync', this.firstSearch);
-    //Default search in this.videos.search() below
-    this.videos.search('Cute huskies');
+    // default `search`
+    this.videos.search('simulation theory');
     this.render();
   },
 
   firstSearch: function() {
-    //Selects first video 
+    // selects first video 
     this.videos.at(0).select();
   },
-
+// render the app
   render: function() {
     this.$el.empty();
     this.$el.html(this.template());
     
-    //Render player view
+    // render player view
     new VideoPlayerView({
       model: this.videos.at(0),
       collection: this.videos,
       el: this.$('.player')
     }).render();
     
-    //Render list view
+    // render list view
     new VideoListView({
       collection: this.videos,
       el: this.$('.list')
     }).render();
   
-    //Render search view
+    // render search view
     new SearchView({
       collection: this.videos,
       el: this.$('.search')

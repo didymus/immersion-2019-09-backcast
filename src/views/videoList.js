@@ -1,33 +1,28 @@
 const VideoListView = Backbone.View.extend({
 
-  //Initialize the video in list view
+  // initialize the video in list view
   initialize: function() {
-    //Render the collection when it syncs
+    // render collection on `sync`
     this.listenTo(this.collection, 'sync', this.render);
   },
 
-  //Renders video list view
+  // renders video list view
   render: function() {
-    //Remove children from $el
+    // remove children from $el
     this.$el.children().detach();
-    //Puts video list on html page template
+    // put video list on html page
     this.$el.html(this.template());
-    
+    // append entries
     this.$el.children().append(
       this.collection.map(function(video) {
-        //Maps through rendering list entry videos 
+        // map through and render list entry videos to prescribed format
         return new VideoListEntryView({model: video}).render().el;
       })
     );
-    // for (let i = 0; i < this.collection.length; i++) {
-    //   this.renderVideoListEntry(this.collection.at(i));
-    // }
     return this;
   },
 
-
   template: templateURL('src/templates/videoList.html'),
-
 });
 
 window.VideoListView = VideoListView;

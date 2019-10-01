@@ -2,11 +2,10 @@ const Videos = Backbone.Collection.extend({
 
   model: Video,
   url: 'https://www.googleapis.com/youtube/v3/search',
-  //Google's youtube API url
+  //Google YouTube API url
 
 
-  search: function(query) { //this is a fetch request that conforms to Postman
-    //syntax
+  search: function(query) { // fetch request that conforms to Postman data
     this.fetch({
       data: {
         part: 'snippet',
@@ -18,11 +17,10 @@ const Videos = Backbone.Collection.extend({
       }
     });
   },
-
+// parse it out
   parse: function(response) {
     return response.items;
   }
-  
   
 });
 
